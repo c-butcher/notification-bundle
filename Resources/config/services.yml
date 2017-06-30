@@ -1,0 +1,15 @@
+services:
+    notification.settings.factory:
+        class: KungFu\NotificationBundle\Service\NotificationSettingFactory
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%notification.config%'
+
+    notification.notifer:
+        class: KungFu\NotificationBundle\Service\Notifier
+        arguments:
+            - '@mailer'
+            - '@templating'
+            - '@property_accessor'
+            - '@notification.settings.factory'
+            - '%notification.config%'
