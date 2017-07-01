@@ -3,6 +3,13 @@
 This notification bundle allows you to easily manage user notifications. It allows users to choose which notifications
 they want to receive, and then emails them whenever those notification are sent.
 
+* [Configuration](#configuration)
+   * [Integrating your user system](#integrating-your-user-system)
+   * [Adding a new notification](#adding-a-new-notification)
+* [Creating the email template](#creating-the-email-template)
+* [Sending notifications](#sending-notifications)
+* [Performance tip](#performance-tip)
+
 ## Configuration
 Below is an example of the full configuration for this bundle.
 ```yaml
