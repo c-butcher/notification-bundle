@@ -9,6 +9,12 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class NotificationSettingsForm
+ *
+ * @package KungFu\NotificationBundle\Form
+ * @author Chris Butcher <c.butcher@hotmail.com>
+ */
 class NotificationSettingsForm extends AbstractType
 {
     /**

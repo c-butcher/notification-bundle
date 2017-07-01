@@ -2,7 +2,6 @@
 
 namespace KungFu\NotificationBundle\Service;
 
-use KungFu\NotificationBundle\Entity\NotificationSetting;
 use Doctrine\ORM\EntityManagerInterface;
 use KungFu\NotificationBundle\Entity\NotificationSettingInterface;
 

@@ -8,8 +8,19 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 use KungFu\NotificationBundle\Entity\NotificationSetting;
 use KungFu\NotificationBundle\Service\NotificationSettingFactory;
 
+/**
+ * Class Configuration
+ *
+ * @package KungFu\NotificationBundle\DependencyInjection
+ * @author Chris Butcher <c.butcher@hotmail.com>
+ */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * This method defines our bundles configuration layout within the Symfony configuration file.
+     *
+     * @return TreeBuilder
+     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();

@@ -12,6 +12,12 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Class NotificationController
+ *
+ * @package KungFu\NotificationBundle\Controller
+ * @author Chris Butcher <c.butcher@hotmail.com>
+ */
 class NotificationController extends Controller
 {
     /**
