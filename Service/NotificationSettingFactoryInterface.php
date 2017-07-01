@@ -33,9 +33,11 @@ interface NotificationSettingFactoryInterface
     public function create($userId, $key);
 
     /**
-     * @param NotificationSettingInterface $setting
+     * @param integer $userId
+     * @param string  $key
+     * @param boolean $enabled
      *
      * @return void
      */
-    public function update(NotificationSettingInterface $setting);
+    public function update($userId, $key, $enabled);
 }

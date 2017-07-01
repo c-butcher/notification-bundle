@@ -65,9 +65,14 @@ class NotificationSettingFactory implements NotificationSettingFactoryInterface
         return $setting;
     }
 
-    public function update(NotificationSettingInterface $setting)
+    public function update($userId, $key, $enabled)
     {
-        $this->manager->persist($setting);
+        if (($setting = $this->getByUserKey($userId, $key)) === null) {
+            $setting = $this->create($userId, $key);
+        }
+
+        $setting->setEnabled($enabled);
+
         $this->manager->flush();
     }
 }
