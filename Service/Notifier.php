@@ -110,8 +110,8 @@ class Notifier implements NotifierInterface
             throw new Exception("The user properties must be set within the notification configuration.");
         }
 
-        $from    = $this->config['from'];
-        $replyTo = $this->config['reply_to'];
+        $from    = $this->config['mailer']['from'];
+        $replyTo = $this->config['mailer']['reply_to'];
         $subject = $this->config['notifications'][$key]['subject'];
 
         $notification = new Swift_Message();
