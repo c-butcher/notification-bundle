@@ -1,5 +1,9 @@
-{{ form_start(form) }}
+{% extends "@Notification/layout.html.twig" %}
 
-{{ form_widget(form) }}
+{% block body %}
+    {{ form_start(form) }}
 
-{{ form_end(form) }}
+    {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+{% endblock %}
