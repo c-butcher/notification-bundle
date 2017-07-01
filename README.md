@@ -57,9 +57,18 @@ In order to get that information, you need to tell the notification bundle few t
 
 ### Adding a New Notification
 
-In your symfony configuration, find the `kungfu_notifications` configuration, or you might have to create it. Once you
-have that, then you'll want to add your new notification to the `notifications` section. The first property that you want
-to add under the `notifications` section should be the name of the notification, in this case `product_min_quantity`.
+You can add new notifications under the `notifications` section of your `kungfu_notifications` configuration. The first
+line under `notifications` should be the name of your notification, in this case it is `product_min_quantity`, which is
+what you will use to call your notification later in your code.
+
+**NOTE**: The name of the notification must start with a letter and only contain letters, numbers and underscores.
+
+Underneath of the notifications name, you will need to supply four properties which are all required.
+
+* `subject` - will be used as the subject of the email.
+* `description` - is used on the settings page to describe the notification to your end-users.
+* `template` - a php/twig template that contains the contents of your email.
+* `enabled` - tells whether the notification should be enabled by default.
 
 ```yaml
 kungfu_notifications:
@@ -71,15 +80,6 @@ kungfu_notifications:
             enabled: true
 ```
 
-**NOTE**: The name of the notification must start with a letter and only contain letters, numbers and underscores.
-
-Your new notification will have four properties that you need to set, as they are all required.
-
-* `subject` - will be used as the subject of the email.
-* `description` - is used on the settings page to describe then notification to your end-users.
-* `template` - a php/twig template that contains the contents of your email.
-* `enabled` - tells whether the notification should be enabled by default.
-
 ## Creating the Email Template
 
 Once your notification has been created, you'll probably want to create the email template with the contents of your
@@ -89,8 +89,8 @@ you to customize the notification to each specific user.
 ```html
 <h3>Minimum Quanity Reached</h3>
 <p>
-    Hey {{ recipient.name }}! We just wanted to let you know that the {{ product.name }} product has reached its
-    minimum quantity of {{ product.min_quantity }}.
+    Hey {{ recipient.name }}! We just wanted to let you know that the {{ product.name }} product has
+    reached its minimum quantity of {{ product.min_quantity }}.
 </p> 
 ```
 
