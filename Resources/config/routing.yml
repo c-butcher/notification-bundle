@@ -1,0 +1,3 @@
+notifications:
+  resource: '@NotificationBundle/Controller/'
+  type: annotation
