@@ -1,9 +1,21 @@
 {% extends "@Notification/layout.html.twig" %}
 
 {% block body %}
+
     {{ form_start(form) }}
 
-    {{ form_widget(form) }}
+    <td>{{ form_widget(form._token) }}</td>
+
+    <table>
+    {% for element in form.children %}
+        {% if element.isRendered == false %}
+        <tr>
+            <td>{{ form_widget(element) }}</td>
+            <td>{{ form_label(element) }}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </table>
 
     {{ form_end(form) }}
 {% endblock %}
