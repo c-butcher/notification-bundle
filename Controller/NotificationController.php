@@ -21,17 +21,13 @@ class NotificationController extends Controller
      */
     public function settingsAction(Request $request)
     {
-        /*
         if (!$this->isGranted('IS_FULLY_AUTHENTICATED')) {
             return $this->redirect('./');
         }
 
         if (($user = $this->getUser()) === null) {
             return $this->redirect('./');
-        }*/
-
-        $user = new \AppBundle\Entity\User();
-        $user->setId(1);
+        }
 
         /**
          * @var NotificationSettingFactoryInterface $settings
