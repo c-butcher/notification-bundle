@@ -62,7 +62,7 @@ In order to get that information, you need to tell the notification bundle few t
             identifier: id   # The property which contains the unique identifier on your user entity.
             email: email     # The property which contains the email address on the user entity.
 ```
-## Mailer Settings
+### Mailer Settings
 Under the `kungfu_notifications` there is a section called `mailer`, which allows you to customize the email addresses that your notifications comes from, along with the address that users can reply to.
 
 ```yaml
