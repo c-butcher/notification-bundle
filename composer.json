@@ -1,12 +1,12 @@
 {
   "name": "kungfu/notifications",
-  "description": "Adds email notifications to your Symfony Project."
+  "description": "Adds email notifications to your Symfony Project.",
   "license": "Apache-2.0",
   "keywords": ["Email", "Notification"],
   "authors": [{
     "name": "Chris Butcher",
     "email": "c.butcher@hotmail.com"
-  }]
+  }],
   "autoload": {
     "psr-4": { "KungFu\\NotificationBundle\\": "" }
   },
