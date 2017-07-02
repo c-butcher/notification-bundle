@@ -3,12 +3,21 @@
 This notification bundle allows you to easily manage user notifications. It allows users to choose which notifications
 they want to receive, and then emails them whenever those notification are sent.
 
+* [Installation](#installation)
 * [Configuration](#configuration)
    * [Integrating your user system](#integrating-your-user-system)
+   * [Mailer settings](#mailer-settings)
    * [Adding a new notification](#adding-a-new-notification)
 * [Creating the email template](#creating-the-email-template)
 * [Sending notifications](#sending-notifications)
 * [Performance tip](#performance-tip)
+
+## Installation
+You will need to make sure that you have [composer installed](https://getcomposer.org/doc/00-intro.md). Then open up your console/command prompt and go to your Symfony projects root directory. There you can execute the following command to install this bundle to your project.
+
+```
+  composer require kungfu/notifications
+```
 
 ## Configuration
 Below is an example of the full configuration for this bundle.
@@ -53,7 +62,18 @@ In order to get that information, you need to tell the notification bundle few t
             identifier: id   # The property which contains the unique identifier on your user entity.
             email: email     # The property which contains the email address on the user entity.
 ```
+### Mailer Settings
+Under the `kungfu_notifications` there is a section called `mailer`, which allows you to customize the email addresses that your notifications comes from, along with the address that users can reply to.
 
+```yaml
+    mailer:
+        from:
+            name: 'Your Site Name'
+            address: 'example@yoursite.com'
+        reply_to:
+            name: 'No Reply'
+            address: 'no-reply@yoursite.com'
+```
 
 ### Adding a New Notification
 
