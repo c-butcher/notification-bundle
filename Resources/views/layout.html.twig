@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Notifications{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <p class="notice notice-success">{{ flashMessage }}</p>
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <p class="notice notice-error">{{ flashMessage }}</p>
+        {% endfor %}
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

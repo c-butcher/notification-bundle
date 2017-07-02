@@ -7,8 +7,21 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Config\FileLocator;
 
-class NotificationExtension extends Extension
+/**
+ * Class KungfuNotificationExtension
+ *
+ * @package KungFu\NotificationBundle\DependencyInjection
+ * @author Chris Butcher <c.butcher@hotmail.com>
+ */
+class KungfuNotificationExtension extends Extension
 {
+    /**
+     * In order for our bundle to operate correctly, we need to load our configuration, services and
+     * any other information that is required by our bundle.
+     *
+     * @param array $configs
+     * @param ContainerBuilder $container
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
@@ -18,5 +31,15 @@ class NotificationExtension extends Extension
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+    }
+
+    /**
+     * This allows us to change the name that Symfony uses to identify our bundle.
+     *
+     * @return string
+     */
+    public function getAlias()
+    {
+        return 'kungfu_notifications';
     }
 }

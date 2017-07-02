@@ -28,16 +28,6 @@ class NotificationSetting implements NotificationSettingInterface
     public $key;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    public $schedule;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    public $lastSent;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     public $enabled;
@@ -65,26 +55,6 @@ class NotificationSetting implements NotificationSettingInterface
     public function setKey($key)
     {
         $this->key = $key;
-    }
-
-    public function getSchedule()
-    {
-        return $this->schedule;
-    }
-
-    public function setSchedule($schedule)
-    {
-        $this->schedule = $schedule;
-    }
-
-    public function getLastSent()
-    {
-        return $this->lastSent;
-    }
-
-    public function setLastSent($lastSent)
-    {
-        $this->lastSent = $lastSent;
     }
 
     public function getEnabled()
