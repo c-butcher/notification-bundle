@@ -39,7 +39,9 @@ class NotificationSettingsForm extends AbstractType
 
             /**
              * When a user already has the setting, then we need to make sure that our checkboxes are reflecting
-             * whether the user has enabled the notification or not. */
+             * whether the user has enabled the notification or not.
+             *
+             * @var NotificationSettingInterface $notification_setting */
             foreach ($options['user_settings'] as $notification_setting) {
                 if ($notification_setting->getKey() == $key) {
                     $enabled = $notification_setting->getEnabled();
