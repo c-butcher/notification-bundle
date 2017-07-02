@@ -54,9 +54,7 @@ class NotificationSettingFactory implements NotificationSettingFactoryInterface
 
         $setting->setUserId($userId);
         $setting->setKey($key);
-        $setting->setSchedule($this->config['notifications'][$key]['schedule']);
         $setting->setEnabled($this->config['notifications'][$key]['enabled']);
-        $setting->setLastSent(new \DateTime("-{$this->config['notifications'][$key]['schedule']} seconds"));
 
         $this->manager->persist($setting);
         $this->manager->flush();
