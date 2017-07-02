@@ -19,6 +19,28 @@ You will need to make sure that you have [composer installed](https://getcompose
   composer require kungfu/notifications
 ```
 
+When composer has completed running, open your `app/AppKernel.php` file located in your Symfony project and add the notification bundle the list of `$bundles` in the `registerBundles` method.
+
+```php
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = [
+            //...
+            new KungFu\NotificationBundle\NotificationBundle(),
+        ];
+    }
+}
+```
+
+Then open your `app/config/routing.yml` file and add the following lines of code to enable the settings page.
+
+```yaml
+kungfu_notifications:
+    resource: '@NotificationBundle/Resources/config/routing.yml'
+```
+
 ## Configuration
 Below is an example of the full configuration for this bundle.
 ```yaml
